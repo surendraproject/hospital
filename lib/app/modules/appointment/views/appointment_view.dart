@@ -201,68 +201,13 @@ class AppointmentView extends GetView<AppointmentController> {
                                   fontSize: SizeConfig.defaultSize * 1.4),
                         ),
                         SizedBox(height: SizeConfig.defaultSize),
-                        // Row(
-                        //   children: [
-                        //     Container(
-                        //       // height: SizeConfig.defaultSize * 2,
-                        //       // width: SizeConfig.defaultSize * 3.0,
-                        //       padding: EdgeInsets.symmetric(
-                        //           horizontal: SizeConfig.defaultSize * 2,
-                        //           vertical: SizeConfig.defaultSize * 2),
-                        //       decoration: BoxDecoration(
-                        //           color: Colors.white,
-                        //           boxShadow: const [
-                        //             BoxShadow(blurRadius: 2, color: Colors.grey)
-                        //           ],
-                        //           borderRadius: BorderRadius.circular(
-                        //               SizeConfig.defaultSize)),
-                        //       child:
-                        //           SvgPicture.asset("assets/icons/Group 18.svg",color: ,),
-                        //     ),
-                        //     SizedBox(width: SizeConfig.defaultSize),
-                        //     Container(
-                        //       // height: SizeConfig.defaultSize * 2,
-                        //       // width: SizeConfig.defaultSize * 3.0,
-                        //       padding: EdgeInsets.symmetric(
-                        //           horizontal: SizeConfig.defaultSize * 2,
-                        //           vertical: SizeConfig.defaultSize * 2),
-                        //       decoration: BoxDecoration(
-                        //           color: Colors.white,
-                        //           boxShadow: const [
-                        //             BoxShadow(blurRadius: 2, color: Colors.grey)
-                        //           ],
-                        //           borderRadius: BorderRadius.circular(
-                        //               SizeConfig.defaultSize)),
-                        //       child: SvgPicture.asset(
-                        //           "assets/icons/Vector (4).svg",color: ,),
-                        //     ),
-                        //     SizedBox(width: SizeConfig.defaultSize),
-                        //     Container(
-
-                        //       padding: EdgeInsets.symmetric(
-                        //           horizontal: SizeConfig.defaultSize * 2,
-                        //           vertical: SizeConfig.defaultSize * 2),
-                        //       decoration: BoxDecoration(
-                        //           color: Colors.white,
-                        //           boxShadow: const [
-                        //             BoxShadow(blurRadius: 2, color: Colors.grey)
-                        //           ],
-                        //           borderRadius: BorderRadius.circular(
-                        //               SizeConfig.defaultSize)),
-                        //       child: SvgPicture.asset(
-                        //           "assets/icons/Vector (5).svg",color: ,),
-                        //     )
-                        //   ],
-                        // ),
                         Row(
                           children: List.generate(3, (index) {
                             return GestureDetector(
                               onTap: () {
-                                controller.updateSelectedIndex(
-                                    index); // Update selected index
+                                controller.updateSelectedIndex(index);
                               },
                               child: Obx(() {
-                                // Check if this container is selected
                                 bool isSelected =
                                     controller.selectedIndex.value == index;
                                 return Container(
@@ -274,13 +219,9 @@ class AppointmentView extends GetView<AppointmentController> {
                                     border: Border.all(
                                       color: isSelected
                                           ? Colors.green
-                                          : Colors
-                                              .transparent, // Green border for selected item
+                                          : Colors.transparent,
                                     ),
                                     color: Colors.white,
-                                    // color: isSelected
-                                    //     ? Colors.green
-                                    //     : Colors.white,
                                     boxShadow: const [
                                       BoxShadow(
                                           blurRadius: 2, color: Colors.grey),
@@ -309,7 +250,135 @@ class AppointmentView extends GetView<AppointmentController> {
                   SizedBox(
                     width: double.maxFinite,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        showDialog(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return AlertDialog(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(
+                                    SizeConfig.defaultSize * 1.2),
+                              ),
+                              contentPadding:
+                                  EdgeInsets.all(SizeConfig.defaultSize * 2),
+                              content: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  SvgPicture.asset(
+                                      'assets/icons/Group (9).svg'),
+                                  SizedBox(height: SizeConfig.defaultSize * 2),
+                                  Text(
+                                    'Thank You !',
+                                    textAlign: TextAlign.center,
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .bodyLarge
+                                        ?.copyWith(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: SizeConfig.defaultSize * 2,
+                                        ),
+                                  ),
+                                  Text(
+                                    'Your Appointment is Confirmed!',
+                                    textAlign: TextAlign.center,
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .bodyLarge
+                                        ?.copyWith(
+                                          color: Colors.grey,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize:
+                                              SizeConfig.defaultSize * 1.6,
+                                        ),
+                                  ),
+                                  Text(
+                                    '''You booked an appointment with
+Dr. Shruti Kedia on Oct 17,
+at 10:00 AM
+''',
+                                    textAlign: TextAlign.center,
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .bodyLarge
+                                        ?.copyWith(
+                                          color: Colors.grey,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize:
+                                              SizeConfig.defaultSize * 1.2,
+                                        ),
+                                  ),
+                                  Text(
+                                    'Appointment Type',
+                                    textAlign: TextAlign.center,
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .bodyLarge
+                                        ?.copyWith(
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize:
+                                              SizeConfig.defaultSize * 1.2,
+                                        ),
+                                  ),
+                                  SizedBox(height: SizeConfig.defaultSize * 1),
+                                  Container(
+                                      margin: const EdgeInsets.all(5),
+                                      padding: EdgeInsets.symmetric(
+                                          horizontal: SizeConfig.defaultSize,
+                                          vertical: SizeConfig.defaultSize),
+                                      decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        boxShadow: const [
+                                          BoxShadow(
+                                              blurRadius: 2,
+                                              color: Colors.grey),
+                                        ],
+                                        borderRadius: BorderRadius.circular(
+                                            SizeConfig.defaultSize),
+                                      ),
+                                      child: SvgPicture.asset(
+                                          "assets/icons/Group 18.svg")),
+                                  SizedBox(height: SizeConfig.defaultSize * 2),
+                                  SizedBox(
+                                    width: double.maxFinite,
+                                    child: ElevatedButton(
+                                      onPressed: () {
+                                        Navigator.of(context).pop();
+                                      },
+                                      style: ElevatedButton.styleFrom(
+                                        backgroundColor:
+                                            const Color(0xFF0EBE7F),
+                                        // padding: EdgeInsets.symmetric(
+                                        //   vertical: SizeConfig.defaultSize * 1.2,
+                                        //   horizontal: SizeConfig.defaultSize * 3,
+                                        // ),
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(
+                                            SizeConfig.defaultSize * 0.8,
+                                          ),
+                                        ),
+                                      ),
+                                      child: Text(
+                                        'Continue',
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .bodyLarge
+                                            ?.copyWith(
+                                              color: Colors.white,
+                                              fontWeight: FontWeight.bold,
+                                              fontSize:
+                                                  SizeConfig.defaultSize * 1.5,
+                                            ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            );
+                          },
+                        );
+                      },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: const Color(0xFF0EBE7F),
                         padding: EdgeInsets.symmetric(
@@ -329,8 +398,6 @@ class AppointmentView extends GetView<AppointmentController> {
                       ),
                     ),
                   ),
-
-                  // _buildAppointmentForm(context),
                 ],
               ),
             ),

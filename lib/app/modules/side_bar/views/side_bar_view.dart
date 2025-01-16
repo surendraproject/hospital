@@ -34,8 +34,13 @@ class SideBarView extends GetView<SideBarController> {
                   children: [
                     Row(
                       children: [
-                        const CircleAvatar(
-                          radius: 30,
+                        InkWell(
+                          onTap: (){
+                            Get.toNamed(Routes.PROFILE);
+                          },
+                          child: const CircleAvatar(
+                            radius: 30,
+                          ),
                         ),
                         SizedBox(width: SizeConfig.defaultSize),
                         const Column(
@@ -55,8 +60,14 @@ class SideBarView extends GetView<SideBarController> {
                           ],
                         ),
                         Expanded(
-                          child: SvgPicture.asset(
-                              "assets/icons/Frame 1171276611.svg"),
+                          child: InkWell(
+                            onTap: () {
+                              Get.back(); // Pops the current screen
+                            },
+                            child: SvgPicture.asset(
+                              "assets/icons/Frame 1171276611.svg",
+                            ),
+                          ),
                         )
                       ],
                     ),
@@ -75,63 +86,63 @@ class SideBarView extends GetView<SideBarController> {
                 svgAssetPath: 'assets/icons/about us icon.svg',
                 title: 'About Us',
                 onTap: () {
-                        Get.toNamed(Routes.ABOUT_US);
+                  Get.toNamed(Routes.ABOUT_US);
                 },
               ),
               MenuItem(
                 svgAssetPath: 'assets/icons/Group (7).svg',
                 title: 'Category',
                 onTap: () {
-                        Get.toNamed(Routes.CATEGORY);
+                  Get.toNamed(Routes.CATEGORY);
                 },
               ),
               MenuItem(
                 svgAssetPath: 'assets/icons/appointment.svg',
                 title: 'Book Appointment',
                 onTap: () {
-                        Get.toNamed(Routes.CATEGORY);
+                  Get.toNamed(Routes.CATEGORY);
                 },
               ),
               MenuItem(
                 svgAssetPath: 'assets/icons/Group (8).svg',
                 title: 'Appointment History',
                 onTap: () {
-                        Get.toNamed(Routes.APPOINTMENT_HISTORY);
+                  Get.toNamed(Routes.APPOINTMENT_HISTORY);
                 },
               ),
               MenuItem(
                 svgAssetPath: 'assets/icons/Group (8).svg',
                 title: 'Upcoming History',
                 onTap: () {
-                        Get.toNamed(Routes.UPCOMING_APPOINTMENT);
+                  Get.toNamed(Routes.UPCOMING_APPOINTMENT);
                 },
               ),
               MenuItem(
                 svgAssetPath: 'assets/icons/File.svg',
                 title: 'Upload Report',
                 onTap: () {
-                        Get.toNamed(Routes.UPLOAD_REPORT);
+                  Get.toNamed(Routes.UPLOAD_REPORT);
                 },
               ),
               MenuItem(
                 svgAssetPath: 'assets/icons/File.svg',
                 title: 'Report History',
                 onTap: () {
-                        Get.toNamed(Routes.REPORT_HISTORY);
+                  Get.toNamed(Routes.REPORT_HISTORY);
                 },
               ),
               MenuItem(
                 svgAssetPath: 'assets/icons/Vector (10).svg',
                 title: 'Contact Us',
                 onTap: () {
-                        Get.toNamed(Routes.CONTACT_US);
+                  Get.toNamed(Routes.CONTACT_US);
                 },
               ),
               MenuItem(
                 svgAssetPath: 'assets/icons/Term 1.svg',
                 title: 'Terms & Conditions',
                 onTap: () {
-                        Get.toNamed(Routes.TERMS_CONDITION);
+                  Get.toNamed(Routes.TERMS_CONDITION);
                 },
                 showDivider: true,
               ),
@@ -139,20 +150,22 @@ class SideBarView extends GetView<SideBarController> {
                 svgAssetPath: 'assets/icons/Privacy 1.svg',
                 title: 'Privacy Policy',
                 onTap: () {
-                        Get.toNamed(Routes.PRIVACY_POLICY);
+                  Get.toNamed(Routes.PRIVACY_POLICY);
                 },
               ),
               MenuItem(
                 svgAssetPath: 'assets/icons/Help 1.svg',
                 title: 'Help Center',
                 onTap: () {
-                        Get.toNamed(Routes.HELP_CENTER);
+                  Get.toNamed(Routes.HELP_CENTER);
                 },
               ),
               MenuItem(
                 svgAssetPath: 'assets/icons/Group 88.svg',
                 title: 'Logout',
-                onTap: () {      Get.toNamed(Routes.LOGIN);},
+                onTap: () {
+                  Get.toNamed(Routes.LOGIN);
+                },
                 showDivider: false,
               ),
             ],

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:hospital/app/theme/size_config.dart';
 import 'package:hospital/app/theme/theme.dart';
 
@@ -46,14 +47,14 @@ class CustomGradientContainer2 extends StatelessWidget {
 
   const CustomGradientContainer2({
     super.key,
-     this.child,
+    this.child,
     this.padding,
     required this.txt,
   });
 
   @override
   Widget build(BuildContext context) {
-  SizeConfig().init(context);
+    SizeConfig().init(context);
     return Container(
       height: double.infinity,
       width: double.infinity,
@@ -81,23 +82,33 @@ class CustomGradientContainer2 extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Container(
-                  height: SizeConfig.defaultSize * 3.5,
-                  width: SizeConfig.defaultSize * 3.5,
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius:
-                          BorderRadius.circular(SizeConfig.defaultSize)),
-                  child: const Icon(Icons.arrow_back_ios_outlined,
-                      color: Colors.grey)),
+              InkWell(
+                onTap: () {
+                  Get.back();
+                },
+                child: Container(
+                    height: SizeConfig.defaultSize * 3.5,
+                    width: SizeConfig.defaultSize * 3.5,
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius:
+                            BorderRadius.circular(SizeConfig.defaultSize)),
+                    child: InkWell(
+                      onTap: () {
+                        // Get.back();
+                      },
+                      child: const Icon(Icons.arrow_back_ios_outlined,
+                          color: Colors.grey),
+                    )),
+              ),
               SizedBox(width: SizeConfig.defaultSize * 2.5),
               Text(
-                txt ,
+                txt,
                 style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                     color: BasilTheme.black.value,
                     fontWeight: FontWeight.bold,
                     fontSize: SizeConfig.defaultSize * 2),
-              )               
+              )
             ],
           ),
         ),

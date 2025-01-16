@@ -1,5 +1,4 @@
 import 'package:get/get.dart';
-
 import '../modules/about_us/bindings/about_us_binding.dart';
 import '../modules/about_us/views/about_us_view.dart';
 import '../modules/appointment/bindings/appointment_binding.dart';
@@ -42,13 +41,12 @@ import '../modules/update_profile/bindings/update_profile_binding.dart';
 import '../modules/update_profile/views/update_profile_view.dart';
 import '../modules/upload_report/bindings/upload_report_binding.dart';
 import '../modules/upload_report/views/upload_report_view.dart';
-
 part 'app_routes.dart';
 
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.HOME;
+  static const INITIAL = Routes.UPLOAD_REPORT;
   static final routes = [
     GetPage(
       name: _Paths.HOME,

@@ -103,34 +103,7 @@ class DoctorListView extends GetView<DoctorListController> {
                         ),
                         SizedBox(width: SizeConfig.defaultSize),
                         SvgPicture.asset('assets/icons/Group (6).svg')
-                        // Padding(
-                        //   padding: const EdgeInsets.all(8.0),
-                        //   child: Container(
-                        //     height: 10,
-                        //     width: 200,
-                        //     decoration: BoxDecoration(
-                        //       color: Colors.green
-                        //           .withOpacity(0.5), // Adjust opacity as needed
-                        //       borderRadius:
-                        //           BorderRadius.circular(SizeConfig.defaultSize),
-                        //     ),
-                        //     child:
-                        //     Padding(
-                        //       padding: const EdgeInsets.all(8.0),
-                        //       child: Container(
-                        //         padding: EdgeInsets.all(5),
-                        //         height: 5,
-                        //         width: 180,
-                        //         decoration: BoxDecoration(
-                        //           color: Color(0xff0EBE7F).withOpacity(
-                        //               0.5),
-                        //           borderRadius: BorderRadius.circular(
-                        //               SizeConfig.defaultSize),
-                        //         ),
-                        //       ),
-                        //     ),
-
-                        //   ))
+                  
                       ],
                     ),
                   ),
@@ -232,41 +205,7 @@ class DoctorListView extends GetView<DoctorListController> {
                             ),
                           ],
                         ),
-                        // Row(
-                        //   // crossAxisAlignment: CrossAxisAlignment.start,
-                        //   // mainAxisAlignment: MainAxisAlignment.start,
-                        //   children: [
-                        //     SvgPicture.asset('assets/icons/vidioimage.svg'),
-                        //     SvgPicture.asset('assets/icons/Frame 30.svg'),
-                        //     SvgPicture.asset('assets/icons/Frame 31.svg'),
-                        //     SizedBox(width: SizeConfig.defaultSize * 3.5),
-                        // Expanded(
-                        //   child: ElevatedButton(
-                        //     onPressed: () {},
-                        //     style: ElevatedButton.styleFrom(
-                        //       backgroundColor: const Color(0xFF0EBE7F),
-                        //       padding: EdgeInsets.symmetric(
-                        //           vertical: SizeConfig.defaultSize * 1.2),
-                        //       shape: RoundedRectangleBorder(
-                        //         borderRadius: BorderRadius.circular(
-                        //             SizeConfig.defaultSize * 0.8),
-                        //       ),
-                        //     ),
-                        //     child: Text(
-                        //       'Book Now',
-                        //       style: Theme.of(context)
-                        //           .textTheme
-                        //           .bodyLarge
-                        //           ?.copyWith(
-                        //             color: Colors.white,
-                        //             fontWeight: FontWeight.bold,
-                        //             fontSize: SizeConfig.defaultSize * 1.5,
-                        //           ),
-                        //     ),
-                        //   ),
-                        // ),
-                        //   ],
-                        // )
+                    
                         Row(
                           children: List.generate(3, (index) {
                             return GestureDetector(
@@ -291,9 +230,7 @@ class DoctorListView extends GetView<DoctorListController> {
                                               .transparent, // Green border for selected item
                                     ),
                                     color: Colors.white,
-                                    // color: isSelected
-                                    //     ? Colors.green
-                                    //     : Colors.white,
+                                  
                                     boxShadow: const [
                                       BoxShadow(
                                           blurRadius: 2, color: Colors.grey),

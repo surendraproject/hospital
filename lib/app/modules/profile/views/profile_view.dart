@@ -18,7 +18,6 @@ class ProfileView extends GetView<ProfileController> {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Container(
-            // height: 200,
             padding: EdgeInsets.symmetric(
                 horizontal: SizeConfig.defaultSize,
                 vertical: SizeConfig.defaultSize),
@@ -41,7 +40,12 @@ class ProfileView extends GetView<ProfileController> {
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    SvgPicture.asset('assets/icons/Chevron Left.svg'),
+                    InkWell(
+                        onTap: () {
+                          Get.back();
+                        },
+                        child:
+                            SvgPicture.asset('assets/icons/Chevron Left.svg')),
                     SizedBox(width: SizeConfig.defaultSize * 2),
                     Expanded(
                       child: Text(
@@ -71,25 +75,50 @@ class ProfileView extends GetView<ProfileController> {
                   child: Stack(
                     alignment: Alignment.center,
                     children: [
+                      // Container(
+                      //   height: SizeConfig.defaultSize * 16,
+                      //   width: SizeConfig.defaultSize * 16,
+                      //   decoration: const BoxDecoration(
+                      //     shape: BoxShape.circle,
+                      //   ),
+                      //   child: Padding(
+                      //     padding: const EdgeInsets.all(8.0),
+                      //     child: Image.asset("assets/images/Doctor image.png"),
+                      //   ),
+                      // ),
                       Container(
                         height: SizeConfig.defaultSize * 16,
                         width: SizeConfig.defaultSize * 16,
-                        decoration: const BoxDecoration(
+                        decoration: BoxDecoration(
                           shape: BoxShape.circle,
+                          border: Border.all(
+                            color: Colors.white,
+                            width: 2,
+                          ),
                         ),
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
-                          child: Image.asset("assets/images/Doctor image.png"),
+                          child: ClipOval(
+                            child: Obx(() {
+                              return controller.selectedImage.value == null
+                                  ? Icon(
+                                      Icons.camera_alt,
+                                      color: Colors.grey,
+                                      size: SizeConfig.defaultSize * 4,
+                                    )
+                                  : Image.file(
+                                      controller.selectedImage.value!,
+                                      fit: BoxFit.cover,
+                                    );
+                            }),
+                          ),
                         ),
                       ),
-
-                      // Text("Pushpendra singh"),
-                      // Text("+91 9999999999"),
                       Positioned(
                         bottom: 25,
                         right: 10,
                         child: GestureDetector(
-                          // onTap: controller.pickImageFromCamera,
+                          onTap: controller.pickImageFromCamera,
                           child: Container(
                             padding:
                                 EdgeInsets.all(SizeConfig.defaultSize * 0.5),
@@ -105,7 +134,6 @@ class ProfileView extends GetView<ProfileController> {
                           ),
                         ),
                       ),
-                      // SizedBox(height: SizeConfig.defaultSize * 1.5),
                     ],
                   ),
                 ),

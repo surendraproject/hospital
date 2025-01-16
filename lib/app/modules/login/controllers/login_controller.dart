@@ -6,7 +6,7 @@ class LoginController extends GetxController {
 
   final TextEditingController MobileController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
-  final TextEditingController forgetpasswordController =
+  final TextEditingController forgetpasswordController =  
       TextEditingController();
   final TextEditingController otpController = TextEditingController();
   final TextEditingController resetpasswordController = TextEditingController();
@@ -52,7 +52,6 @@ class LoginController extends GetxController {
   bool bottomseetpasswordvalidation() {
     bool isValid = true;
     String phoneNumber = forgetpasswordController.text;
-
     if (phoneNumber.isEmpty) {
       bootomseetpasswordError.value = 'Please enter Phone number';
       isValid = false;
@@ -65,13 +64,12 @@ class LoginController extends GetxController {
     } else {
       bootomseetpasswordError.value = '';
     }
-
     return isValid;
   }
 
+
   bool otpvalidation() {
     bool isValid = true;
-
     if (otpController.text.isEmpty) {
       otpError.value = 'Please enter OTP';
       isValid = false;

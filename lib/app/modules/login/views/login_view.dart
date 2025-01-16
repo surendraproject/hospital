@@ -244,7 +244,7 @@ class LoginView extends GetView<LoginController> {
     );
   }
 
-  void _showsetBottomSheet(BuildContext context) {
+  void  _showsetBottomSheet(BuildContext context) {
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,
