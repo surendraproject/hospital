@@ -79,7 +79,6 @@ class LoginController extends GetxController {
     } else {
       otpError.value = '';
     }
-
     return isValid;
   }
 
@@ -104,7 +103,6 @@ class LoginController extends GetxController {
       conformpasswordError.value = 'Passwords do not match';
       isValid = false;
     }
-
     return isValid;
   }
 
@@ -131,5 +129,5 @@ class LoginController extends GetxController {
     conformPasswordVisible.value = !conformPasswordVisible.value;
   }
 
-  void increment() => count.value++;
+ void increment() => count.value++;
 }

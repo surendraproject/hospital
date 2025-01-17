@@ -130,23 +130,33 @@ class ReviewView extends GetView<ReviewController> {
                     scrollDirection: Axis.vertical,
                     itemBuilder: (context, index) {
                       return ListTile(
-                        title: Text("Upendra",
-                            style: Theme.of(context)
-                                .textTheme
-                                .bodyLarge
-                                ?.copyWith(
+                        trailing: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: List.generate(5, (index) {
+                            return Icon(
+                              Icons.star,
+                              color: Colors.amber,
+                              size: SizeConfig.defaultSize * 2,
+                            );
+                          }),
+                        ),
+                        title: Text(
+                          "Amris",
+                          style:
+                              Theme.of(context).textTheme.bodyLarge?.copyWith(
                                     fontWeight: FontWeight.bold,
-                                    fontSize: SizeConfig.defaultSize * 2)),
+                                    fontSize: SizeConfig.defaultSize * 1.8,
+                                  ),
+                        ),
                         leading: const CircleAvatar(),
                         subtitle: Text(
                           "Patient",
-                          style: Theme.of(context)
-                              .textTheme
-                              .bodyLarge
-                              ?.copyWith(
-                                  color: BasilTheme.gray.value,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: SizeConfig.defaultSize * 1),
+                          style:
+                              Theme.of(context).textTheme.bodyLarge?.copyWith(
+                                    color: BasilTheme.gray.value,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: SizeConfig.defaultSize * 1,
+                                  ),
                         ),
                       );
                     },

@@ -17,7 +17,7 @@ class CustomGradientContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: double.infinity,
-      width: double.infinity,
+      width: double.maxFinite,
       decoration: BoxDecoration(
         gradient: LinearGradient(
           begin: Alignment.topLeft,
@@ -95,7 +95,7 @@ class CustomGradientContainer2 extends StatelessWidget {
                             BorderRadius.circular(SizeConfig.defaultSize)),
                     child: InkWell(
                       onTap: () {
-                        // Get.back();
+                        Get.back();
                       },
                       child: const Icon(Icons.arrow_back_ios_outlined,
                           color: Colors.grey),

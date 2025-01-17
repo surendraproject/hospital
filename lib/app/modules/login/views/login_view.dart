@@ -74,7 +74,10 @@ class LoginView extends GetView<LoginController> {
                 CustomButton(
                   text: 'Login',
                   onPressed: () {
-                    controller.mobilevalidation();
+                    // controller.mobilevalidation();
+                    if (controller.mobilevalidation()) {
+                      Get.toNamed(Routes.HOME);
+                    }
                   },
                 ),
                 SizedBox(height: SizeConfig.defaultSize * 3),
@@ -83,7 +86,7 @@ class LoginView extends GetView<LoginController> {
                   child: GestureDetector(
                     onTap: () => _showForgotPasswordBottomSheet(context),
                     child: Text(
-                      "Forgot password",
+                      "Forget password",
                       style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                             color: const Color(0xff0EBE7F),
                           ),
@@ -136,7 +139,7 @@ class LoginView extends GetView<LoginController> {
             mainAxisSize: MainAxisSize.min,
             children: [
               Text(
-                "Forgot Password",
+                "Forget Password",
                 style: Theme.of(context).textTheme.titleLarge?.copyWith(
                       fontWeight: FontWeight.bold,
                     ),
@@ -244,7 +247,7 @@ class LoginView extends GetView<LoginController> {
     );
   }
 
-  void  _showsetBottomSheet(BuildContext context) {
+  void _showsetBottomSheet(BuildContext context) {
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,

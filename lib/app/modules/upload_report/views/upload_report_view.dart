@@ -184,12 +184,16 @@ class UploadReportView extends GetView<UploadReportController> {
       ),
     );
   }
+
+  
 Widget _buildUploadedImagesList(BuildContext context) {
   SizeConfig().init(context);
   return Obx(() {
     if (controller.selectedImages.isEmpty) {
-      return Center(
-        child: Text(
+      return  
+      Center(
+        child: 
+        Text(
           'No images uploaded yet.',
           style: TextStyle(
             color: Colors.grey,
@@ -198,6 +202,7 @@ Widget _buildUploadedImagesList(BuildContext context) {
         ),
       );
     }
+
     return ListView.builder(
       scrollDirection: Axis.vertical,
       shrinkWrap: true,
