@@ -3,7 +3,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:hospital/app/theme/size_config.dart';
 import 'package:hospital/app/widgets/coustom_continer.dart';
-
 import '../../../widgets/coustom_navigation_bar.dart';
 import '../controllers/doctor_list_controller.dart';
 
@@ -103,7 +102,6 @@ class DoctorListView extends GetView<DoctorListController> {
                         ),
                         SizedBox(width: SizeConfig.defaultSize),
                         SvgPicture.asset('assets/icons/Group (6).svg')
-                  
                       ],
                     ),
                   ),
@@ -205,7 +203,6 @@ class DoctorListView extends GetView<DoctorListController> {
                             ),
                           ],
                         ),
-                    
                         Row(
                           children: List.generate(3, (index) {
                             return GestureDetector(
@@ -230,7 +227,6 @@ class DoctorListView extends GetView<DoctorListController> {
                                               .transparent, // Green border for selected item
                                     ),
                                     color: Colors.white,
-                                  
                                     boxShadow: const [
                                       BoxShadow(
                                           blurRadius: 2, color: Colors.grey),

@@ -1,6 +1,7 @@
 class GenericResponse {
   String? message;
 
+
   GenericResponse({this.message});
 
   factory GenericResponse.fromJson(Map<String, dynamic> json) =>

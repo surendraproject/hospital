@@ -54,7 +54,7 @@ class Connect implements IHttpConnect {
 
   @override
   Future<Response<T>> postFormData<T>(String url, Map<String, dynamic> body,
-      {T Function(dynamic p1)? decoder}) async {
+      {T Function(dynamic p1)? decoder,T Function(dynamic p1)? headers,}) async {
     Logger().d('REQUEST_BODY: $body');
     final response = await _connect.post(url, FormData(body), decoder: decoder);
     final obj = Response(
@@ -74,4 +74,6 @@ class Connect implements IHttpConnect {
     );
     return obj;
   }
+
 }
+

@@ -51,7 +51,7 @@ class RegisterView extends GetView<RegisterController> {
                 TextFormField(
                   controller: controller.nameController,
                   autovalidateMode: AutovalidateMode.onUserInteraction,
-                  validator: controller.validateName,
+                  // validator: controller.validateName,
                   decoration: InputDecoration(
                     contentPadding: EdgeInsets.symmetric(
                       horizontal: SizeConfig.defaultSize * 0.5,
@@ -82,10 +82,10 @@ class RegisterView extends GetView<RegisterController> {
                 ),
                 SizedBox(height: SizeConfig.defaultSize),
                 TextFormField(
-                  controller: controller.phonenumbarController,
+                  controller: controller.phoneController,
                   keyboardType: TextInputType.phone,
                   autovalidateMode: AutovalidateMode.onUserInteraction,
-                  validator: controller.validatePhone,
+                  // validator: controller.validatePhone,
                   decoration: InputDecoration(
                     contentPadding: EdgeInsets.symmetric(
                       horizontal: SizeConfig.defaultSize * 0.5,
@@ -119,7 +119,7 @@ class RegisterView extends GetView<RegisterController> {
                   controller: controller.emailController,
                   keyboardType: TextInputType.emailAddress,
                   autovalidateMode: AutovalidateMode.onUserInteraction,
-                  validator: controller.validateEmail,
+                  // validator: controller.validateEmail,
                   decoration: InputDecoration(
                     contentPadding: EdgeInsets.symmetric(
                       horizontal: SizeConfig.defaultSize * 0.5,
@@ -152,7 +152,7 @@ class RegisterView extends GetView<RegisterController> {
                 TextFormField(
                   controller: controller.passwordController,
                   autovalidateMode: AutovalidateMode.onUserInteraction,
-                  validator: controller.validatepassword,
+                  // validator: controller.validatepassword,
                   decoration: InputDecoration(
                     suffixIcon: const Icon(Icons.visibility),
                     contentPadding: EdgeInsets.symmetric(
@@ -184,9 +184,9 @@ class RegisterView extends GetView<RegisterController> {
                 ),
                 SizedBox(height: SizeConfig.defaultSize),
                 TextFormField(
-                  controller: controller.repasswordController,
+                  controller: controller.confirmPasswordController,
                   autovalidateMode: AutovalidateMode.onUserInteraction,
-                  validator: controller.validatere_password,
+                  // validator: controller.validatere_password,
                   decoration: InputDecoration(
                     suffixIcon: const Icon(Icons.visibility),
                     contentPadding: EdgeInsets.symmetric(
@@ -258,7 +258,7 @@ class RegisterView extends GetView<RegisterController> {
                 CustomButton(
                   text: 'Sign up',
                   onPressed: () {
-                    controller.registervalidation();
+                      controller.registerUser();
                   },
                 ),
                 SizedBox(height: SizeConfig.defaultSize * 3),

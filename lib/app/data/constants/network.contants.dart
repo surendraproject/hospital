@@ -1,5 +1,6 @@
 abstract class NetworkConstants {
-  static String BASE_URL = 'https://dakshhousing.com/medicalapp/api/';
+  // static String BASE_URL = 'https://dakshhousing.com/hospital_user/';
+  static String BASE_URL = 'https://dakshhousing.com/medicalapp/api/hospital_user/';
   static String CHAT_URL(
           {required String receiverId,
           required String senderId,

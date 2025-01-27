@@ -34,14 +34,26 @@ class AboutUsView extends GetView<AboutUsController> {
                       ),
                 ),
                 SizedBox(height: SizeConfig.defaultSize),
-                Text(
-                  """There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words believable. It is a long established fact that reader will distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a moreIt is a long established fact that reader will distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more """,
-                  style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                        fontWeight: FontWeight.bold,
-                        color: const Color(0xff959CB4CC),
-                        fontSize: SizeConfig.defaultSize * 1.7,
-                      ),
-                ),
+                Obx(() {
+                  final description =
+                      controller.termsData.value?.description.toString();
+                  return Text(
+                    description ?? "",
+                    style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                          fontWeight: FontWeight.bold,
+                          color: const Color(0xff959CB4CC),
+                          fontSize: SizeConfig.defaultSize * 1.7,
+                        ),
+                  );
+                })
+                // Text(
+                //   """There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words believable. It is a long established fact that reader will distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a moreIt is a long established fact that reader will distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more """,
+                // style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                //       fontWeight: FontWeight.bold,
+                //       color: const Color(0xff959CB4CC),
+                //       fontSize: SizeConfig.defaultSize * 1.7,
+                //     ),
+                // ),
               ],
             ),
           )),

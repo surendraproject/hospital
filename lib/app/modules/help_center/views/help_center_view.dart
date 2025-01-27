@@ -152,11 +152,14 @@ class HelpCenterView extends GetView<HelpCenterController> {
                   SizedBox(height: SizeConfig.defaultSize * 2),
                   GestureDetector(
                     onTap: () {
-                      if (controller.isFormValid) {
+               
+
+                      if (controller.isFormValid) {       controller.submitHelpCenterRequest();
                         // Handle submission logic here
                       } else {
                         controller.validateTopic();
                       }
+
                     },
                     child: Container(
                       padding: EdgeInsets.symmetric(
